@@ -1,0 +1,34 @@
+{
+  "name": "localhost-server",
+  "version": "1.11.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Chang <wahengchang@gmail.com>",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "localhost-server": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wahengchang/localhost-server.git"
+  },
+  "keywords": [
+    "localhost",
+    "hosting",
+    "web",
+    "server",
+    "http",
+    "file",
+    "html",
+    "simple",
+    "service",
+    "local"
+  ],
+  "dependencies": {
+    "node-static": "^0.7.7"
+  }
+}
