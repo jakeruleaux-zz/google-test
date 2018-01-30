@@ -26,17 +26,23 @@
 
 
 
-    function initClient() {
-      var API_KEY = 'AIzaSyA-mU2-GNxWdiFowEX-jPp850zSJsBclPQ';
 
-      var CLIENT_ID = '777685935611-8ijbaab71ets2lg89oaim0u6uq9k2aak.apps.googleusercontent.com'
+      // var API_KEY = 'AIzaSyA-mU2-GNxWdiFowEX-jPp850zSJsBclPQ';
+      //
+      // var CLIENT_ID = '777685935611-8ijbaab71ets2lg89oaim0u6uq9k2aak.apps.googleusercontent.com'
 
       function googleIt() {
 
              var spreadsheetBody =
                  {
                  "sheets": [],
+                 "range":"",
+                 "values": [],
                  "spreadsheetId": "",
+                 "values": ["bob"
+                        ["test"
+                        ],
+                    ],
                  "spreadsheetUrl": ""
                  };
              var request = gapi.client.sheets.spreadsheets.create({}, spreadsheetBody);
@@ -50,9 +56,9 @@
          }
 
          function initClient() {
-           var API_KEY = 'AIzaSyAsGKmBiVn806G8orCXYo9ftdHctWR53yo';
+             var API_KEY = 'AIzaSyA-mU2-GNxWdiFowEX-jPp850zSJsBclPQ';
 
-           var CLIENT_ID = '276394898066-nnm93h0m5vk2fpe25g1nn26v6bg3hik0.apps.googleusercontent.com';
+            var CLIENT_ID = '777685935611-8ijbaab71ets2lg89oaim0u6uq9k2aak.apps.googleusercontent.com'
 
            var SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
            gapi.client.init({
@@ -69,6 +75,7 @@
              // console.log(load);
            gapi.load('client:auth2', initClient);
          }
+
          function updateSignInStatus(isSignedIn) {
            if (isSignedIn) {
              googleIt();
@@ -77,6 +84,33 @@
           function handleSignInClick(event) {
            gapi.auth2.getAuthInstance().signIn();
          }
+
          function handleSignOutClick(event) {
            gapi.auth2.getAuthInstance().signOut();
          }
+
+         function makeApiCall() {
+            var params = {
+
+              spreadsheetId: '1yROVVo8llswzANV3CzYK8ZefrzJEnLb2nUAtRytAU90',
+
+              // The A1 notation of the values to update.
+              range: 'my-range',  // TODO: Update placeholder value.
+
+              // How the input data should be interpreted.
+              valueInputOption: '',  // TODO: Update placeholder value.
+            };
+
+            var valueRangeBody = {
+              // TODO: Add desired properties to the request body. All existing properties
+              // will be replaced.
+            };
+
+            var request = gapi.client.sheets.spreadsheets.values.update(params, valueRangeBody);
+            request.then(function(response) {
+              // TODO: Change code below to process the `response` object:
+              console.log(response.result);
+            }, function(reason) {
+              console.error('error: ' + reason.result.error.message);
+  });
+}
