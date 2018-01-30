@@ -2,10 +2,16 @@
 <html>
   <head>
        <script src="js/script.js"></script>
-       <meta name="google-signin-scope" content="profile email">
+       <script src="https://apis.google.com/js/platform.js" async defer></script>
+       <!-- <meta name="google-signin-scope" content="profile email"> -->
        <meta name="google-signin-client_id" content="777685935611-49u6verghb2v4k8717lc0uokuog3sbab.apps.googleusercontent.com">
        <script src="https://apis.google.com/js/platform.js?onload=loadClient" async defer></script>
        <script src="https://apis.google.com/js/api.js"></script>
+       <script async defer src="https://apis.google.com/js/api.js"
+           onload="this.onload=function(){};handleClientLoad()"
+           onreadystatechange="if (this.readyState === 'complete') this.onload()">
+       </script>
+
     <meta charset="utf-8">
     <title>google</title>
   </head>
